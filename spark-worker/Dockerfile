@@ -4,8 +4,8 @@ FROM ubuntu:14.04
 
 MAINTAINER Daniele Venzano <venza@brownhat.org>
 
-ENV SPARK_VERSION {{ spark_version }}
-ENV HADOOP_VERSION {{ hadoop_version }}
+ENV SPARK_VERSION 1.4.1
+ENV HADOOP_VERSION hadoop2.4
 
 RUN apt-get update && apt-get install -y --force-yes software-properties-common python-software-properties
 RUN apt-add-repository -y ppa:webupd8team/java
@@ -23,3 +23,9 @@ ENV PATH /opt/spark/bin:/opt/spark/sbin:${PATH}
 
 COPY files/* /opt/
 RUN chmod +x /opt/*.sh
+EXPOSE 8888 8081 4040
+
+CMD /opt/start-worker.sh
+
+#ENV SPARK_WORKER_PORT 8888
+#ENV SPARK_WORKER_WEBUI_PORT 8081

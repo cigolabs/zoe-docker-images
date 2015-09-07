@@ -7,7 +7,8 @@ fi
 mkdir /tmp/${APPLICATION_ID}
 cd  /tmp/${APPLICATION_ID}
 
-redis-cli ${REDIS_CLI_OPTIONS} get app-${APPLICATION_ID} > app.zip
+echo "Downloading application from ${APPLICATION_URL}"
+curl "${APPLICATION_URL}" --retry 5 --retry-delay 2 -o app.zip
 unzip app.zip
 
 /opt/spark/bin/spark-submit --master spark://${SPARK_MASTER_IP}:7077 --executor-memory=${SPARK_EXECUTOR_RAM} ${SPARK_OPTIONS} "$@"
