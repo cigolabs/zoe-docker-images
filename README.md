@@ -1,14 +1,19 @@
 # zoe-docker-images
 
-Scripts for building Docker images containing Spark, for use with Zoe, the Container Analytics as a Service.
+This repository contains the scripts and configuration files used to create images for Zoe, the Container
+Analytics as a Service.
 
-These scripts create the following images and upload them to a private docker registry:
+Currently these images can be created:
 
 * Spark master
 * Spark worker
 * Spark submit
 * Spark shell
-* Spark Scala Notebook (https://github.com/andypetrella/spark-notebook)
+* Spark Scala notebook
+
+Look at the README files in each image directory for more details.
+
+## Useful scripts
 
 To run use the `build_images.sh` script. Customize the variables at the top of the script to set paths and addresses.
 
