@@ -6,5 +6,5 @@ services:
   - docker
 
 script:
-  - ./build-images.sh
+  - bash ./build-images.sh
 
