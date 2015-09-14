@@ -5,7 +5,7 @@ FROM ubuntu:14.04
 MAINTAINER Daniele Venzano <venza@brownhat.org>
 
 ENV SPARK_VERSION 1.5.0
-ENV HADOOP_VERSION hadoop2.5
+ENV HADOOP_VERSION hadoop2.4
 
 RUN apt-get update && apt-get install -y --force-yes software-properties-common python-software-properties
 RUN apt-add-repository -y ppa:webupd8team/java

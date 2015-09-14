@@ -4,7 +4,7 @@ import os
 import shutil
 
 SPARK_VERSION = "1.5.0"
-HADOOP_VERSION = "hadoop2.5"
+HADOOP_VERSION = "hadoop2.4"
 
 # directory, template file, files
 images = [

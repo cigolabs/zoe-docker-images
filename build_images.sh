@@ -15,7 +15,7 @@ fi
 for d in spark-master spark-worker spark-shell spark-submit spark-scala-notebook; do
   pushd $d
   docker build -t ${REPOSITORY}/$d:${VERSION} .
-  docker tag ${REPOSITORY}/$d:${VERSION} ${LOCAL_REGISTRY}/${REPOSITORY}/$d:${VERSION}
+  docker tag -f ${REPOSITORY}/$d:${VERSION} ${LOCAL_REGISTRY}/${REPOSITORY}/$d:${VERSION}
   docker push ${LOCAL_REGISTRY}/${REPOSITORY}/$d:${VERSION}
   popd
 done
