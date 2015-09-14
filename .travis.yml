@@ -6,5 +6,5 @@ services:
   - docker
 
 script:
-  - bash ./build_images.sh
+  - bash .travis/travis_build.sh
 
