@@ -3,8 +3,8 @@ FROM ubuntu:14.04
 MAINTAINER Daniele Venzano <venza@brownhat.org>
 
 ENV SCALA_VERSION 2.10.4
-ENV NOTEBOOK_VERSION 0.6.0
-ENV SPARK_VERSION 1.4.1
+ENV NOTEBOOK_VERSION 0.6.1
+ENV SPARK_VERSION 1.5.0
 ENV HADOOP_VERSION hadoop-2.5.0-cdh5.3.0
 
 RUN apt-get update && apt-get install -y --force-yes software-properties-common python-software-properties
@@ -22,6 +22,6 @@ ENV PATH /opt/spark-notebook/bin:${PATH}
 COPY files/* /opt/
 RUN chmod +x /opt/*.sh
 
-EXPOSE 9000
+EXPOSE 9000 4040
 
 CMD /opt/start-notebook.sh
