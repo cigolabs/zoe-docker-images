@@ -1,3 +1,10 @@
+[![Documentation Status](https://readthedocs.org/projects/zoe-analytics/badge/?version=latest)](https://readthedocs.org/projects/zoe-analytics/?badge=latest)
+[![Build Status](https://travis-ci.org/DistributedSystemsGroup/zoe-docker-images.svg?branch=master)](https://travis-ci.org/DistributedSystemsGroup/zoe-docker-images)
+
+# Zoe - Container-based Analytics as a Service
+
+Main project page: https://github.com/DistributedSystemsGroup/zoe
+
 # zoe-docker-images
 
 This repository contains the scripts and configuration files used to create images for Zoe, the Container
