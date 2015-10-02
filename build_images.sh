@@ -12,7 +12,7 @@ if [ ${VERSION} == 'master' ]; then
 	VERSION=""
 fi
 
-for d in spark-master spark-worker spark-shell spark-submit spark-scala-notebook; do
+for d in spark-master spark-worker spark-shell spark-submit spark-scala-notebook spark-ipython-notebook; do
   pushd $d
   docker build -t ${REPOSITORY}/$d:${VERSION} .
   docker tag -f ${REPOSITORY}/$d:${VERSION} ${LOCAL_REGISTRY}/${REPOSITORY}/$d:${VERSION}

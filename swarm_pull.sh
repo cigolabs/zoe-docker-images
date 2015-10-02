@@ -6,6 +6,7 @@ IMAGES="zoerepo/spark-master \
         zoerepo/spark-worker \
         zoerepo/spark-submit \
         zoerepo/spark-shell \
+        zoerepo/spark-ipython-notebook \
         zoerepo/spark-scala-notebook"
 SWARM=10.1.0.1:2380
 

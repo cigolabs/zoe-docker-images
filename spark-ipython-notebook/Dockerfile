@@ -21,13 +21,15 @@ RUN ln -s spark-${SPARK_VERSION}-bin-${HADOOP_VERSION} spark
 ENV SPARK_HOME /opt/spark
 ENV PATH /opt/spark/bin:/opt/spark/sbin:${PATH}
 
+RUN apt-get update && apt-get install -y --force-yes ipython ipython-notebook python-matplotlib python-pandas python-sklearn
+RUN ipython profile create pyspark
+
 COPY files/* /opt/
 RUN chmod +x /opt/*.sh
-RUN apt-get update && apt-get -y install python-numpy
 
-EXPOSE 8888 8081 4040
+COPY files/00-pyspark-setup.py /root/.ipython/profile_pyspark/startup/
 
-CMD /opt/start-worker.sh
+CMD /opt/start-notebook.sh
 
-#ENV SPARK_WORKER_PORT 8888
-#ENV SPARK_WORKER_WEBUI_PORT 8081
+EXPOSE 4040 8888
+
