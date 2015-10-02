@@ -17,7 +17,7 @@ RUN curl -s https://s3.eu-central-1.amazonaws.com/spark-notebook/tgz/spark-noteb
 
 WORKDIR /opt
 
-RUN ln -s spark-notebook-${NOTEBOOK_VERSION}-scala-${SCALA_VERSION}-spark-${SPARK_VERSION}-${HADOOP_VERSION} spark-notebook
+RUN ln -s spark-notebook-${NOTEBOOK_VERSION}-scala-${SCALA_VERSION}-spark-${SPARK_VERSION}-${HADOOP_VERSION}-with-parquet spark-notebook
 ENV PATH /opt/spark-notebook/bin:${PATH}
 COPY files/* /opt/
 RUN chmod +x /opt/*.sh

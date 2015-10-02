@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-export SPARK_MASTER_IP=`awk 'NR==1 {print $1}' /etc/hosts`
-export SPARK_LOCAL_IP=`awk 'NR==1 {print $1}' /etc/hosts`
+if [ -z ${SPARK_MASTER_IP} ]; then
+	export SPARK_MASTER_IP=`awk 'NR==1 {print $1}' /etc/hosts`
+fi
 export SPARK_MASTER_PORT=7077
 export SPARK_MASTER_WEBUI_PORT=8080
 
