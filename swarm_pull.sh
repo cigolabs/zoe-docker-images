@@ -7,7 +7,9 @@ IMAGES="zoerepo/spark-master \
         zoerepo/spark-submit \
         zoerepo/spark-shell \
         zoerepo/spark-ipython-notebook \
-        zoerepo/spark-scala-notebook"
+        zoerepo/spark-scala-notebook \
+	zoerepo/hadoop-datanode \
+	zoerepo/hadoop-namenode"
 SWARM=10.1.0.1:2380
 
 if [ "${IMAGE_VER}" = "master" ]; then
