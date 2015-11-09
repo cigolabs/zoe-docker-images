@@ -1,16 +1,13 @@
 #!/bin/bash
 
 set -e
+set -x
 
 REPOSITORY=zoerepo
 
 LOCAL_REGISTRY=10.1.0.1:5000
 
-VERSION=`git branch | grep \* | awk '{ print $2 }'`
-
-if [ ${VERSION} == 'master' ]; then
-	VERSION=""
-fi
+VERSION=""
 
 for d in spark-master spark-worker spark-shell spark-submit spark-ipython-notebook hadoop-namenode hadoop-datanode; do
   pushd $d
