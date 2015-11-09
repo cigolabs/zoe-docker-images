@@ -15,8 +15,10 @@ fi
 for d in spark-master spark-worker spark-shell spark-submit spark-ipython-notebook hadoop-namenode hadoop-datanode; do
   pushd $d
   docker build -t ${REPOSITORY}/$d:${VERSION} .
-  docker tag -f ${REPOSITORY}/$d:${VERSION} ${LOCAL_REGISTRY}/${REPOSITORY}/$d:${VERSION}
-  docker push ${LOCAL_REGISTRY}/${REPOSITORY}/$d:${VERSION}
+  if [ z"$1" != z"--build-only" ]; then
+    docker tag -f ${REPOSITORY}/$d:${VERSION} ${LOCAL_REGISTRY}/${REPOSITORY}/$d:${VERSION}
+    docker push ${LOCAL_REGISTRY}/${REPOSITORY}/$d:${VERSION}
+  fi
   popd
 done
 
