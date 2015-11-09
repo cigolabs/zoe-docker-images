@@ -3,8 +3,8 @@
 import os
 import shutil
 
-SPARK_VERSION = "1.5.0"
-HADOOP_VERSION = "hadoop2.4"
+SPARK_VERSION = "1.5.1"
+HADOOP_VERSION = "hadoop2.6"
 
 # directory, template file, files
 images = [

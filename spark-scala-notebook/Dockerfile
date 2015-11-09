@@ -10,7 +10,7 @@ RUN apt-get update && apt-get -y install oracle-java7-installer oracle-java7-set
 
 ENV SCALA_VERSION 2.10.4
 ENV NOTEBOOK_VERSION 0.6.1
-ENV SPARK_VERSION 1.5.0
+ENV SPARK_VERSION 1.5.1
 ENV HADOOP_VERSION hadoop-2.5.0-cdh5.3.2
 
 RUN curl -s https://s3.eu-central-1.amazonaws.com/spark-notebook/tgz/spark-notebook-${NOTEBOOK_VERSION}-scala-${SCALA_VERSION}-spark-${SPARK_VERSION}-${HADOOP_VERSION}-with-parquet.tgz | tar -xz -C /opt/
