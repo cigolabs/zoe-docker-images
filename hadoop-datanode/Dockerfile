@@ -25,6 +25,7 @@ ENV HADOOP_HOME /opt/hadoop
 
 COPY files/* /opt/
 RUN chmod +x /opt/*.sh
+RUN mkdir /mnt/datanode
 EXPOSE 50010 50075 50020
 
 CMD /opt/start-datanode.sh

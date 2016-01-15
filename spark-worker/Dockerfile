@@ -23,7 +23,13 @@ ENV PATH /opt/spark/bin:/opt/spark/sbin:${PATH}
 
 COPY files/* /opt/
 RUN chmod +x /opt/*.sh
-RUN apt-get update && apt-get -y install python-numpy
+RUN apt-get update && apt-get -y install python3 python3-numpy
+
+ENV NB_USER bnuser
+ENV NB_UID 1000
+
+# Create nbuser user with UID=1000 and in the 'users' group
+RUN useradd -m -s /bin/bash -N -u $NB_UID $NB_USER
 
 EXPOSE 8888 8081 4040
 

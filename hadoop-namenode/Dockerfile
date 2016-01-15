@@ -19,12 +19,12 @@ RUN ln -s hadoop-${HADOOP_VERSION} hadoop
 ENV JAVA_HOME /usr/lib/jvm/java-7-oracle/
 ENV HADOOP_HOME /opt/hadoop
 
-RUN hadoop/bin/hdfs namenode -format hdfscluster
 #ENV SPARK_HOME /opt/spark
 #ENV PATH /opt/spark/bin:/opt/spark/sbin:${PATH}
 
 COPY files/* /opt/
 RUN chmod +x /opt/*.sh
+RUN mkdir /mnt/namenode
 EXPOSE 8020 50010 50075 50020
 
 CMD /opt/start-namenode.sh
